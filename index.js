@@ -1,8 +1,10 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
+require('dotenv').config()
 app.use(cors())
 app.use(express.static("public"))
+const port = process.env.PORT || 4001
 
 const fileName = "SING"
 
@@ -55,6 +57,6 @@ app.get("/video", function (req, res) {
   videoStream.pipe(res)
 })
 
-app.listen(4000, () => {
-  console.log("4000")
+app.listen(port, () => {
+  console.log(port)
 })
