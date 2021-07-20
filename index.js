@@ -4,17 +4,11 @@ const cors = require("cors")
 app.use(cors())
 app.use(express.static("public"))
 
-const list = [
-  "Anh-Muon-Dua-Em-Ve-Khong",
-  "Im-Sorry-Babe",
-  "Nothing-In-Your-Eyes-2",
-  "Sao-Anh-Chua-Ve-Nha",
-  "Vi-Ai-Vi-Anh",
-  "vi-yeu-cu-dam-dau",
-  "SING",
-]
+const fileName = "SING"
 
-const fileName = list[6]
+app.get("/", function (req, res) {
+  res.send("Hello")
+})
 
 app.get("/subtitles", function (req, res) {
   const file = `${__dirname}/public/${fileName}.vtt`
